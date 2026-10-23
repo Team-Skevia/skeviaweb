@@ -20,99 +20,53 @@ permalink: /index.html
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="Website/styles.css?v=motion3" />
+    <link rel="stylesheet" href="Website/styles.css?v=contact1" />
     <script>
       if (!matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("motion");
     </script>
   </head>
-  <body>
+  <body class="home">
     <a class="skip" href="#content">Skip to content</a>
 
     <header class="nav">
       <div class="nav-inner">
-        <a class="brand" href="#" aria-label="Skevia">
+        <a class="brand" href="index.html" aria-label="Skevia">
           <img src="Assets/Logos/mark.png" alt="" width="573" height="689" />
           <span aria-hidden="true">KEVIA</span>
         </a>
+        <div class="nav-actions">
+          <a class="menu-button" href="index.html" aria-current="page">Home</a>
+          <div class="menu">
+          <button class="menu-button" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="product-menu">Products</button>
+          <div class="menu-panel" id="product-menu" role="menu">
+            <a role="menuitem" href="anvil.html">ANVIL</a>
+            <a role="menuitem" href="ave.html">AVE</a>
+            <a role="menuitem" href="tekka.html">Tekka</a>
+          </div>
+        </div>
+          <a class="menu-button" href="contact.html">Contact</a>
+        </div>
       </div>
     </header>
 
     <main id="content">
       <section class="hero">
+        <div class="scrim" aria-hidden="true"></div>
         <div class="hero-content">
           <h1 class="lockup" aria-label="Skevia">
             <img src="Assets/Logos/mark.png" alt="" width="573" height="689" />
             <span aria-hidden="true"><span class="char" style="--i: 0">K</span><span class="char" style="--i: 1">E</span><span class="char" style="--i: 2">V</span><span class="char" style="--i: 3">I</span><span class="char" style="--i: 4">A</span></span>
           </h1>
           <p>Empowering your computer</p>
-          <div class="links">
-            <a class="btn" href="#anvil">Explore ANVIL</a>
-            <a class="link" href="#ave">Explore AVE &rsaquo;</a>
-          </div>
-        </div>
-        <a class="scroll-cue" href="#anvil" aria-label="Scroll to products"></a>
-      </section>
-
-      <section class="product" id="anvil" data-scroll="0.15" data-nosnippet>
-        <h2 data-split data-scroll>ANVIL</h2>
-        <p class="tagline reveal" data-scroll>Local AI × ∞</p>
-        <ul class="features">
-          <li data-scroll>
-            <h3>Adaptive</h3>
-            <p>Sizes itself to the machine it lands on. Whatever processor and memory you have, ANVIL makes them count.</p>
-          </li>
-          <li data-scroll>
-            <h3>Neural</h3>
-            <p>Real neural workloads, running right on your computer. No cluster, no cloud account, no queue on the far end of a wire.</p>
-          </li>
-          <li data-scroll>
-            <h3>Vectorized</h3>
-            <p>Built on vectorized math that gets more work out of every cycle, for machines that cannot afford to waste one.</p>
-          </li>
-          <li data-scroll>
-            <h3>Inference</h3>
-            <p>Every answer is computed locally and offline. Your data never leaves the device, and nothing waits on your internet connection.</p>
-          </li>
-          <li data-scroll>
-            <h3>Loader</h3>
-            <p>Loads models on a lean memory budget, so nearly any amount of RAM is enough. The weights stay on the disk you already own.</p>
-          </li>
-        </ul>
-        <div class="buy">
-          <p class="price reveal" data-scroll>$179.99</p>
-          <p class="soon reveal" data-scroll>Coming soon</p>
-        </div>
-      </section>
-
-      <section class="product alt" id="ave" data-scroll="0.15" data-nosnippet>
-        <h2 data-split data-scroll>AVE</h2>
-        <p class="tagline reveal" data-scroll>Fluid frames × ∞</p>
-        <ul class="features">
-          <li data-scroll>
-            <h3>Adaptive</h3>
-            <p>Reconstruction that reads every part of the image and responds to what is actually there, instead of lousy AI hacks.</p>
-          </li>
-          <li data-scroll>
-            <h3>Visual</h3>
-            <p>Detail that still looks like light hitting a sensor, not a filter sitting on top of the picture. Edges come forward, and grain stays grain.</p>
-          </li>
-          <li data-scroll>
-            <h3>Expansion</h3>
-            <p>Raises resolution with real math: sample, weigh, write the pixel back. It works on the device you have, with no new hardware.</p>
-          </li>
-        </ul>
-        <div class="buy">
-          <p class="price reveal" data-scroll>$129.99</p>
-          <p class="soon reveal" data-scroll>Coming soon</p>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <p class="reveal" data-scroll>© <span data-year>2026</span> Skevia. All rights reserved.</p>
+      <p>© <span data-year>2026</span> Skevia. All rights reserved.</p>
     </footer>
 
-    <script src="Website/script.js?v=motion3"></script>
-    <script src="Website/ripple.js?v=motion3"></script>
+    <script src="Website/script.js?v=contact1"></script>
+    <script src="Website/ripple.js?v=contact1"></script>
   </body>
 </html>

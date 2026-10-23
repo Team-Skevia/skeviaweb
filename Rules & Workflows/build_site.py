@@ -9,6 +9,10 @@ output_directory = repository_root / "Website" / "build"
 public_files = (
     "CNAME",
     "Website/index.html",
+    "Website/anvil.html",
+    "Website/ave.html",
+    "Website/tekka.html",
+    "Website/contact.html",
     "Website/styles.css",
     "Website/script.js",
     "Website/ripple.js",
@@ -34,16 +38,16 @@ def build_site():
     output_directory.mkdir(parents=True)
 
     for relative_path in public_files:
-        public_path = "index.html" if relative_path == "Website/index.html" else relative_path
+        public_path = Path(relative_path).name if relative_path.startswith("Website/") and relative_path.endswith(".html") else relative_path
         destination = output_directory / public_path
         destination.parent.mkdir(parents=True, exist_ok=True)
         source = repository_root / relative_path
-        if relative_path == "Website/index.html":
+        if public_path.endswith(".html"):
             content = source.read_bytes()
             if content.startswith(b"---\n"):
                 front_matter, separator, content = content[4:].partition(b"\n---\n")
                 if not separator:
-                    raise ValueError("Homepage front matter is missing its closing delimiter.")
+                    raise ValueError(f"{relative_path} front matter is missing its closing delimiter.")
             destination.write_bytes(content)
         else:
             shutil.copyfile(source, destination)

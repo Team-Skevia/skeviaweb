@@ -95,3 +95,34 @@ document.querySelectorAll("[data-year]").forEach((el) => {
   new ResizeObserver(() => measure()).observe(document.body);
   toggle();
 })();
+
+(() => {
+  const menu = document.querySelector(".menu");
+  const button = menu?.querySelector(".menu-button");
+  if (!menu || !button) return;
+
+  const setOpen = (open) => {
+    menu.classList.toggle("is-open", open);
+    button.setAttribute("aria-expanded", String(open));
+  };
+
+  button.addEventListener("click", (event) => {
+    event.stopPropagation();
+    setOpen(!menu.classList.contains("is-open"));
+  });
+  menu.addEventListener("mouseenter", () => setOpen(true));
+  menu.addEventListener("mouseleave", () => setOpen(false));
+  menu.addEventListener("focusin", () => setOpen(true));
+  menu.addEventListener("focusout", (event) => {
+    if (!menu.contains(event.relatedTarget)) setOpen(false);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menu.classList.contains("is-open")) {
+      setOpen(false);
+      button.focus();
+    }
+  });
+  document.addEventListener("click", (event) => {
+    if (!menu.contains(event.target)) setOpen(false);
+  });
+})();
