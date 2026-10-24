@@ -275,6 +275,149 @@ a.menu-button[aria-current="page"] {
   color: var(--green-hi);
 }
 
+.email-composer {
+  width: min(860px, 100%);
+  margin-top: 40px;
+  overflow: hidden;
+  border: 1px solid #dce2dc;
+  border-radius: 8px;
+  background: #fff;
+  color: #202820;
+  text-align: left;
+  color-scheme: light;
+}
+
+.composer-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-bottom: 1px solid #dce2dc;
+  background: #fafbfa;
+}
+
+.composer-send,
+.composer-clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  border: 0;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.composer-send {
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--green);
+  color: #fff;
+  font-weight: 600;
+}
+
+.composer-send:hover {
+  background: var(--green-hi);
+}
+
+.composer-clear {
+  width: 40px;
+  background: transparent;
+  color: #536053;
+}
+
+.composer-clear:hover {
+  background: #edf1ed;
+  color: #202820;
+}
+
+.composer-send:focus-visible,
+.composer-clear:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+.composer-fields {
+  padding: 0 16px;
+}
+
+.composer-recipient {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  border-bottom: 1px solid #cbd2cb;
+}
+
+.composer-recipient label {
+  flex-shrink: 0;
+  padding: 4px 12px;
+  border: 1px solid #cbd2cb;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.composer-recipient input,
+.composer-subject,
+.composer-message {
+  min-width: 0;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  background: #fff;
+  color: #202820;
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.composer-recipient input {
+  padding: 8px 0;
+}
+
+.composer-subject {
+  display: block;
+  padding: 15px 0;
+  border-bottom: 1px solid #cbd2cb;
+}
+
+.composer-message {
+  display: block;
+  min-height: 280px;
+  padding: 18px 0;
+  resize: vertical;
+}
+
+.composer-subject::placeholder,
+.composer-message::placeholder {
+  color: #6a756a;
+  opacity: 1;
+}
+
+.composer-recipient input:focus,
+.composer-subject:focus,
+.composer-message:focus {
+  outline: 0;
+  box-shadow: inset 0 -2px var(--green);
+}
+
+.composer-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.composer-help {
+  max-width: 860px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
 .sheet .price {
   margin-top: 48px;
 }

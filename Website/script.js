@@ -3,6 +3,19 @@ document.querySelectorAll("[data-year]").forEach((el) => {
 });
 
 (() => {
+  const composer = document.querySelector(".email-composer");
+  if (!composer) return;
+
+  composer.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const draft = new FormData(composer);
+    const subject = encodeURIComponent(draft.get("subject").trim());
+    const body = encodeURIComponent(draft.get("body").replace(/\r?\n/g, "\r\n"));
+    window.location.href = `${composer.action}?subject=${subject}&body=${body}`;
+  });
+})();
+
+(() => {
   const root = document.documentElement;
   const still = matchMedia("(prefers-reduced-motion: reduce)");
   const hero = document.querySelector(".hero");
